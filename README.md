@@ -1,6 +1,5 @@
-# pygame-boilerplate
+# Pygame base project shortcut
 Basic snippet boilerplate for vscode
-
 
 ## How to use
 
