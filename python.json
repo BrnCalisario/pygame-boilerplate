@@ -1,0 +1,36 @@
+{
+  "Generate pygame": {
+		"prefix": "bl_pygame",
+		"body":[
+			"import pygame",
+			"\nSCREEN_WIDTH = $1\nSCREEN_HEIGHT = $2\nGAME_NAME = '$0'\n\nsize = [SCREEN_WIDTH, SCREEN_HEIGHT]\n",
+			"\nclass Game():\n\tdef __init__(self):",
+			"\t\tself.game_over = False",
+			"\n\tdef process_events(self):",
+			"\t\tfor event in pygame.event.get():",
+			"\t\t\tif event.type == pygame.QUIT: return True",
+			"\n\tdef run_logic(self):",
+			"\t\tif not self.game_over: pass",
+			"\n\tdef display_frame(self, screen):",
+			"\t\tscreen.fill('Black')",
+			"\t\tif not self.game_over: pass",
+			"\n\ndef main():",
+			"\tpygame.init()",
+			"\tscreen = pygame.display.set_mode(size)",
+			"\n\tpygame.display.set_caption(GAME_NAME)",
+			"\n\tdone = False",
+			"\tclock = pygame.time.Clock()",
+			"\n\tgame = Game()",
+			"\n\twhile not done:",
+			"\n\t\tdone = game.process_events()",
+			"\t\tgame.run_logic()",
+			"\t\tgame.display_frame(screen)",
+			"\n\t\tpygame.display.update()",
+			"\t\tclock.tick(60)",
+			"\n\tpygame.quit()",
+			"\n\nif __name__ == '__main__':",
+			"\tmain()"
+		],
+		"description": "Generate pygame boilerplate"
+	}
+}
